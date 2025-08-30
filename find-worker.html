@@ -1,0 +1,50 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title data-tr="findWorker">Find Worker</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <nav class="nav short">
+    <div class="brand" data-tr="findWorker">Find Worker</div>
+    <select id="lang" aria-label="Language select"></select>
+  </nav>
+
+  <main class="page">
+    <section class="card form-card">
+      <h2 data-tr="findWorker">Find Worker</h2>
+      <form id="findForm">
+        <label class="label" data-tr="location">Location (city / pincode)</label>
+        <input id="f_location" type="text" data-pl="locPlaceholder" required>
+
+        <label class="label" data-tr="category">Category</label>
+        <select id="f_category" required>
+          <option value="">Select</option>
+          <option>Cook</option><option>Electrician</option><option>Plumber</option><option>Site Worker</option>
+          <option>House Help</option><option>Baby Care</option><option>Elderly Care</option><option>Carpenter</option>
+          <option>Painter</option><option>Driver</option><option>Farm Worker</option><option>Other</option>
+        </select>
+
+        <div id="otherTextWrap" style="display:none">
+          <label class="label">If other, describe</label>
+          <input id="f_other" type="text" placeholder="Describe required skill">
+        </div>
+
+        <label class="label" data-tr="minExp">Minimum experience (yrs)</label>
+        <input id="f_exp" type="number" min="0" value="0">
+
+        <button type="submit" class="btn btn-primary" data-tr="search">Search</button>
+      </form>
+    </section>
+
+    <section class="section results">
+      <h3 data-tr="results">Results</h3>
+      <div id="resultsList" class="grid results-grid"></div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,59 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title data-tr="registerWorker">Register as Worker</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body class="page-bg">
+  <div class="center-card">
+    <div class="card form-card">
+      <h2 data-tr="registerWorker">Register as Worker</h2>
+
+      <form id="regForm" novalidate>
+        <label class="label" data-tr="fullName">Full name</label>
+        <input id="r_name" type="text" data-pl="namePl" required>
+        <span class="error" id="err_r_name"></span>
+
+        <label class="label" data-tr="address">Address</label>
+        <input id="r_address" type="text" data-pl="addressPl" required>
+        <span class="error" id="err_r_address"></span>
+
+        <label class="label" data-tr="category">Work Category</label>
+        <select id="r_category" required>
+          <option value="">{ Select }</option>
+          <option>Cook</option><option>Electrician</option><option>Plumber</option><option>Site Worker</option>
+          <option>House Help</option><option>Baby Care</option><option>Elderly Care</option><option>Carpenter</option>
+          <option>Painter</option><option>Driver</option><option>Farm Worker</option><option>Other</option>
+        </select>
+        <span class="error" id="err_r_category"></span>
+
+        <label class="label" data-tr="experience">Experience (years)</label>
+        <input id="r_experience" type="number" min="0" value="0">
+
+        <label class="label" data-tr="phone">Phone</label>
+        <input id="r_phone" type="tel" data-pl="phonePl" required>
+        <span class="error" id="err_r_phone"></span>
+
+        <label class="label" data-tr="idProof">Upload Identity (Aadhaar / Voter ID)</label>
+        <input id="r_idfile" type="file" accept="image/*" capture="environment" required>
+        <div id="idPreview" class="id-preview muted small">No file chosen</div>
+        <span class="error" id="err_r_idfile"></span>
+
+        <label class="label" data-tr="languages">Preferred language</label>
+        <select id="r_lang" required>
+          <option value="en">English</option><option value="hi">हिंदी</option><option value="mr">मराठी</option>
+          <option value="bn">বাংলা</option><option value="ur">اردو</option><option value="ta">தமிழ்</option>
+          <option value="te">తెలుగు</option><option value="kn">ಕನ್ನಡ</option><option value="pa">ਪੰਜਾਬੀ</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary" data-tr="submit">Submit</button>
+        <div id="regSuccess" class="success" role="status" aria-live="polite" hidden></div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

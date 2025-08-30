@@ -1,0 +1,231 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aapka Kaam Aapki Pehchhan</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for icons -->
+  <script src="script.js" crossorigin="anonymous"></script>
+  <!-- Replace 'yourkitid' above with a FontAwesome kit id if you have one. It still works with many cdn links. -->
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png" alt="worker" class="brand-img">
+        <h1 class="brand-title">🌟 Aapka Kaam Aapki Pehchhan</h1>
+      </div>
+
+      <div class="lang-wrap">
+        <label for="langSelect" class="sr">Language</label>
+        <select id="langSelect" aria-label="Select language"></select>
+      </div>
+    </div>
+  </header>
+
+  <nav class="top-nav" aria-hidden="true">
+    <!-- Buttons duplicate main home cards; kept for quick nav -->
+    <button onclick="showSection('home')" class="nav-btn"><i class="fas fa-home"></i><span data-key="home">Home</span></button>
+    <button onclick="showSection('addWorker')" class="nav-btn"><i class="fas fa-user-plus"></i><span data-key="addWorker">Add Worker</span></button>
+    <button onclick="showSection('findWorker')" class="nav-btn"><i class="fas fa-search"></i><span data-key="findWorker">Find Worker</span></button>
+    <button onclick="showSection('login')" class="nav-btn"><i class="fas fa-sign-in-alt"></i><span data-key="login">Login</span></button>
+    <button onclick="showSection('help')" class="nav-btn"><i class="fas fa-question-circle"></i><span data-key="help">Help</span></button>
+  </nav>
+
+  <main>
+    <!-- HOME (cards with big icons) -->
+    <section id="home" class="section active">
+      <div class="home-hero">
+        <div class="hero-text">
+          <h2 class="big">Find trusted workers near you</h2>
+          <p class="muted" data-key="intro">Choose a service, fill a few details and get workers nearby — easy for everyone.</p>
+        </div>
+        
+      </div>
+
+      <div class="card-grid">
+        <div class="big-card" onclick="showSection('addWorker')">
+          <div class="card-icon">👷</div>
+          <div class="card-title" data-key="addWorker">Add Worker</div>
+          <div class="card-desc" data-key="addDesc">Register yourself as a worker (Aadhaar photo allowed)</div>
+        </div>
+
+        <div class="big-card" onclick="showSection('findWorker')">
+          <div class="card-icon">🔍</div>
+          <div class="card-title" data-key="findWorker">Find Worker</div>
+          <div class="card-desc" data-key="findDesc">Tell us what you need and where — we show nearby workers</div>
+        </div>
+
+        <div class="big-card" onclick="showSection('login')">
+          <div class="card-icon">🔑</div>
+          <div class="card-title" data-key="login">Login</div>
+          <div class="card-desc" data-key="loginDesc">Access your saved requests and profile</div>
+        </div>
+
+        <div class="big-card" onclick="showSection('help')">
+          <div class="card-icon">❓</div>
+          <div class="card-title" data-key="help">Help</div>
+          <div class="card-desc" data-key="helpDesc">Short videos and tips for registration</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADD WORKER (full-page) -->
+    <section id="addWorker" class="section">
+      <div class="section-inner">
+        <h2><i class="fas fa-user-plus"></i> <span data-key="addWorker">Add Worker</span></h2>
+
+        <form id="addForm" class="form-grid" enctype="multipart/form-data" novalidate>
+          <!-- left column -->
+          <div class="col">
+            <label><i class="fas fa-user"></i> <span data-key="name">Name</span></label>
+            <input id="aw_name" type="text" placeholder="" data-pl="namePl" required>
+
+            <label><i class="fas fa-phone"></i> <span data-key="phone">Phone</span></label>
+            <input id="aw_phone" type="tel" placeholder="" data-pl="phonePl" required>
+
+            <label><i class="fas fa-envelope"></i> <span data-key="email">Email (optional)</span></label>
+            <input id="aw_email" type="email" placeholder="" data-pl="emailPl">
+
+            <label><i class="fas fa-map-marker-alt"></i> <span data-key="address">Address</span></label>
+            <input id="aw_address" type="text" placeholder="" data-pl="addressPl" required>
+
+            <label><i class="fas fa-city"></i> <span data-key="city">City</span></label>
+            <input id="aw_city" type="text" placeholder="" data-pl="cityPl" required>
+
+            <label><i class="fas fa-map-pin"></i> <span data-key="pincode">Pincode</span></label>
+            <input id="aw_pincode" type="text" placeholder="" data-pl="pinPl" required>
+          </div>
+
+          <!-- right column -->
+          <div class="col">
+            <label><i class="fas fa-briefcase"></i> <span data-key="category">Category</span></label>
+            <select id="aw_category" required></select>
+
+            <label><i class="fas fa-venus-mars"></i> <span data-key="gender">Gender</span></label>
+            <select id="aw_gender">
+              <option value="any" data-key="any">Any</option>
+              <option value="male" data-key="male">Male</option>
+              <option value="female" data-key="female">Female</option>
+            </select>
+
+            <label><i class="fas fa-briefcase"></i> <span data-key="experience">Experience (years)</span></label>
+            <input id="aw_experience" type="number" min="0" value="0">
+
+            <label><i class="fas fa-clock"></i> <span data-key="availability">Availability (timings)</span></label>
+            <input id="aw_availability" type="text" placeholder="" data-pl="availPl">
+
+            <label><i class="fas fa-id-card"></i> <span data-key="aadhaarNo">Aadhaar Number</span></label>
+            <input id="aw_aadhaar" type="text" placeholder="" data-pl="aadhaarPl">
+
+            <label><i class="fas fa-camera"></i> <span data-key="aadhaarPhoto">Upload Aadhaar Photo</span></label>
+            <input id="aw_aadhaar_photo" type="file" accept="image/*" capture="environment" required>
+
+            <label><i class="fas fa-image"></i> <span data-key="profilePhoto">Profile Photo (optional)</span></label>
+            <input id="aw_profile_photo" type="file" accept="image/*" capture="environment">
+          </div>
+
+          <div class="full">
+            <div class="controls">
+              <button type="submit" class="btn primary"><i class="fas fa-check"></i> <span data-key="submit">Submit</span></button>
+              <button type="button" class="btn ghost" onclick="showSection('home')"><i class="fas fa-arrow-left"></i> <span data-key="back">Back</span></button>
+            </div>
+            <div id="addFormMsg" class="form-msg" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FIND WORKER (full-page) -->
+    <section id="findWorker" class="section">
+      <div class="section-inner">
+        <h2><i class="fas fa-search"></i> <span data-key="findWorker">Find Worker</span></h2>
+
+        <form id="findForm" class="form-grid" novalidate>
+          <div class="col">
+            <label><i class="fas fa-map-marker-alt"></i> <span data-key="location">Location (city or pincode)</span></label>
+            <input id="fw_location" type="text" placeholder="" data-pl="locPl" required>
+
+            <label><i class="fas fa-briefcase"></i> <span data-key="category">Category</span></label>
+            <select id="fw_category" required></select>
+
+            <label><i class="fas fa-venus-mars"></i> <span data-key="genderPref">Gender Preference</span></label>
+            <select id="fw_gender">
+              <option value="any" data-key="any">Any</option>
+              <option value="male" data-key="male">Male</option>
+              <option value="female" data-key="female">Female</option>
+            </select>
+          </div>
+
+          <div class="col">
+            <label><i class="fas fa-calendar-alt"></i> <span data-key="minExperience">Minimum Experience (yrs)</span></label>
+            <input id="fw_minexp" type="number" min="0" value="0">
+
+            <label><i class="fas fa-clock"></i> <span data-key="needTime">When do you need the worker?</span></label>
+            <input id="fw_needed_time" type="text" placeholder="" data-pl="needTimePl">
+
+            <label><i class="fas fa-phone"></i> <span data-key="contact">Your Contact Number</span></label>
+            <input id="fw_contact" type="tel" placeholder="" data-pl="contactPl" required>
+          </div>
+
+          <div class="full">
+            <div class="controls">
+              <button type="submit" class="btn primary"><i class="fas fa-search"></i> <span data-key="search">Search</span></button>
+              <button type="button" class="btn ghost" onclick="showSection('home')"><i class="fas fa-arrow-left"></i> <span data-key="back">Back</span></button>
+            </div>
+            <div id="findFormMsg" class="form-msg" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+
+        <section id="results" class="results-area" aria-live="polite"></section>
+      </div>
+    </section>
+
+    <!-- LOGIN (simple demo) -->
+    <section id="login" class="section">
+      <div class="section-inner">
+        <h2><i class="fas fa-sign-in-alt"></i> <span data-key="login">Login</span></h2>
+        <form id="loginForm" class="small-form" novalidate>
+          <label><i class="fas fa-phone"></i> <span data-key="phone">Phone</span></label>
+          <input id="lg_phone" type="tel" placeholder="" data-pl="phonePl" required>
+
+          <label><i class="fas fa-lock"></i> <span data-key="password">Password</span></label>
+          <input id="lg_password" type="password" placeholder="" data-pl="passwordPl" required>
+
+          <div class="controls">
+            <button type="submit" class="btn primary"><i class="fas fa-sign-in-alt"></i> <span data-key="login">Login</span></button>
+            <button type="button" class="btn ghost" onclick="showSection('home')"><i class="fas fa-arrow-left"></i> <span data-key="back">Back</span></button>
+          </div>
+          <div id="loginMsg" class="form-msg" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- HELP -->
+    <section id="help" class="section">
+      <div class="section-inner">
+        <h2><i class="fas fa-question-circle"></i> <span data-key="help">Help</span></h2>
+        <p data-key="helpText">Watch short tutorials to know how to register and find workers.</p>
+        <div class="video-grid">
+          <iframe width="320" height="180" src="https://www.youtube.com/embed/tgbNymZ7vqY" title="Help 1" allowfullscreen></iframe>
+          <iframe width="320" height="180" src="https://www.youtube.com/embed/5MgBikgcWnY" title="Help 2" allowfullscreen></iframe>
+        </div>
+        <div style="text-align:center;margin-top:18px;">
+          <button class="btn ghost" onclick="showSection('home')"><i class="fas fa-arrow-left"></i> <span data-key="back">Back</span></button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div>© 2025 Aapka Kaam Aapki Pehchhan</div>
+    <div class="muted">Privacy • Terms</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

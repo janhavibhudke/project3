@@ -1,0 +1,39 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title data-tr="login">Login — Aapka Kaam</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body class="page-bg">
+  <div class="center-card">
+    <div class="card form-card">
+      <h2 data-tr="login">Login</h2>
+
+      <form id="loginForm" novalidate>
+        <label class="label" data-tr="fullName">Full name</label>
+        <input id="loginName" name="name" type="text" placeholder="" data-pl="namePl" required>
+        <span class="error" id="errName"></span>
+
+        <label class="label" data-tr="contact">Phone or Email</label>
+        <input id="loginContact" name="contact" type="text" placeholder="" data-pl="contactPl" required>
+        <span class="error" id="errContact"></span>
+
+        <label class="label" data-tr="password">Password</label>
+        <input id="loginPassword" name="password" type="password" placeholder="" data-pl="passwordPl" required>
+        <span class="error" id="errPassword"></span>
+
+        <div class="note muted" data-tr="secureNote">Your information is collected only by Aapka Kaam team and will not be shared.</div>
+
+        <button type="submit" class="btn btn-primary" id="loginSubmit" data-tr="submit">Submit</button>
+        <div id="loginSuccess" class="success" role="status" aria-live="polite" hidden></div>
+      </form>
+
+      <p class="muted small">New? <a href="worker-register.html">Register as worker</a></p>
+    </div>
+  </div>
+</body>
+</html>
